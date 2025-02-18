@@ -14,13 +14,11 @@ const Login = () => {
         try {
             const response = await axios.post('http://localhost:5000/api/login', { username, password });
 
-            // Store token
             localStorage.setItem('token', response.data.token);
-            // Store user info
             localStorage.setItem('user', JSON.stringify({ username: response.data.username, id: response.data.id }));
 
             navigate('/feed');
-            window.location.reload(); // Reload navbar with new user info
+            window.location.reload();
         } catch (err) {
             setError('Invalid credentials');
         }

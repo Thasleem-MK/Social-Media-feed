@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 const Navbar = () => {
-    const user = JSON.parse(localStorage.getItem('user')); // Retrieve user info
+    const user = JSON.parse(localStorage.getItem('user')); 
 
     const handleLogout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        window.location.reload(); // Ensure navbar updates
-    };
+        window.location.reload();
+    }
 
 
     return (
